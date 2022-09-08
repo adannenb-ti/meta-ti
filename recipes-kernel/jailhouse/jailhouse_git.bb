@@ -11,12 +11,11 @@ LIC_FILES_CHKSUM = " \
 "
 
 PV = "0.12+git${SRCPV}"
-SRCREV = "0d059b6f2c3efeaa2466517300540498b34b7655"
-BRANCH = "ti-jailhouse-0.12"
+SRCREV = "c7a1b6971ac15e4be8a0918b9bef6e2cbd99f9fc"
+BRANCH = "master"
 
 SRC_URI = " \
-    git://git.ti.com/jailhouse/ti-jailhouse.git;protocol=git;branch=${BRANCH} \
-    file://0001-tools-update-shebang-in-helper-scripts-for-python3.patch \
+    git://github.com/siemens/jailhouse.git;protocol=https;branch=${BRANCH} \
 "
 
 DEPENDS = "virtual/kernel dtc-native python3-mako-native python3-mako make-native"
