@@ -35,6 +35,20 @@ PR = "${MACHINE_KERNEL_PR}"
 KERNEL_GIT_URI = "git://git.ti.com/git/ti-linux-kernel/ti-linux-kernel.git"
 KERNEL_GIT_PROTOCOL = "https"
 SRC_URI += "${KERNEL_GIT_URI};protocol=${KERNEL_GIT_PROTOCOL};branch=${BRANCH} \
+            file://0001-arm64-dts-am654-base-board-Reserve-memory-for-jailho.patch \
+            file://0002-arm64-dts-k3-am654-base-board-jailhouse-Disable-mcu_.patch \
+            file://0003-mm-Re-export-ioremap_page_range.patch \
+            file://0004-mm-vmalloc-Export-__get_vm_area_caller.patch \
+            file://0005-arm-arm64-export-__hyp_stub_vectors.patch \
+            file://0006-uio-Enable-read-only-mappings.patch \
+            file://0007-ivshmem-Add-header-file.patch \
+            file://0008-uio-Add-driver-for-inter-VM-shared-memory-device.patch \
+            file://0009-ivshmem-net-virtual-network-device-for-Jailhouse.patch \
+            file://0010-arm64-dts-disable-peripherals-for-am654x-root-cell.patch \
+            file://0011-arm64-dts-expanded-k3-am654-memory-region-for-jailho.patch \
+            file://0012-arm64-dts-disable-pcie0_rc-node-in-k3-am654-jailhous.patch \
+            file://0013-arm64-dts-am625-base-board-Reserve-memory-for-jailho.patch \
+            file://0014-arm64-dts-add-reserved_memory-label-for-CMA-regions-.patch \
             file://defconfig"
 
 FILES_${KERNEL_PACKAGE_NAME}-devicetree += "/${KERNEL_IMAGEDEST}/*.itb"

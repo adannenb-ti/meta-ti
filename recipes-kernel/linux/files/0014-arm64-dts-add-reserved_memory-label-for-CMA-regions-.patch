@@ -1,0 +1,27 @@
+From 069c47fc9290e81775b2cfb8df585d6266aac484 Mon Sep 17 00:00:00 2001
+From: Matt Ranostay <mranostay@ti.com>
+Date: Thu, 21 Apr 2022 05:53:10 +0300
+Subject: [PATCH] arm64: dts: add reserved_memory label for CMA regions for
+ k3-am625-sk
+
+Signed-off-by: Matt Ranostay <mranostay@ti.com>
+---
+ arch/arm64/boot/dts/ti/k3-am62x-sk-common.dtsi | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/arch/arm64/boot/dts/ti/k3-am62x-sk-common.dtsi b/arch/arm64/boot/dts/ti/k3-am62x-sk-common.dtsi
+index 054a41caa0c5..a1ac87dcd85f 100644
+--- a/arch/arm64/boot/dts/ti/k3-am62x-sk-common.dtsi
++++ b/arch/arm64/boot/dts/ti/k3-am62x-sk-common.dtsi
+@@ -39,7 +39,7 @@ memory@80000000 {
+ 
+ 	};
+ 
+-	reserved-memory {
++	reserved_memory: reserved-memory {
+ 		#address-cells = <2>;
+ 		#size-cells = <2>;
+ 		ranges;
+-- 
+2.34.1
+
