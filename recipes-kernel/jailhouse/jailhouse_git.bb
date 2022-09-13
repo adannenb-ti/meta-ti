@@ -16,6 +16,10 @@ BRANCH = "master"
 
 SRC_URI = " \
     git://github.com/siemens/jailhouse.git;protocol=https;branch=${BRANCH} \
+    file://0001-configs-arm64-k3-am625-sk-Add-crypto-memory-region.patch \
+    file://0002-configs-arm64-k3-am625-sk-Switch-inmate-boot-console.patch \
+    file://0003-configs-arm64-k3-am625-sk-Add-VTM-memory-region.patch \
+    file://0004-configs-arm64-k3-am625-sk-Add-GPMC-memory-region.patch \
 "
 
 DEPENDS = "virtual/kernel dtc-native python3-mako-native python3-mako make-native"
@@ -44,16 +48,19 @@ JH_CELL_FILES ?= "*.cell"
 JH_CELL_FILES_k3 ?= "k3-*.cell"
 
 JH_INMATE_DTB ?= ""
+JH_INMATE_DTB_am62xx ?= "inmate-k3-am625-sk.dtb"
 JH_INMATE_DTB_am65xx ?= "inmate-k3-am654-idk.dtb"
 JH_INMATE_DTB_j7 ?= "inmate-k3-j721e-evm.dtb"
 JH_INMATE_DTB_j7200-evm ?= "inmate-k3-j7200-evm.dtb"
 
 JH_LINUX_DEMO_CELL ?= ""
+JH_LINUX_DEMO_CELL_am62xx ?= "k3-am625-sk-linux-demo.cell"
 JH_LINUX_DEMO_CELL_am65xx ?= "k3-am654-idk-linux-demo.cell"
 JH_LINUX_DEMO_CELL_j7 ?= "k3-j721e-evm-linux-demo.cell"
 JH_LINUX_DEMO_CELL_j7200-evm ?= "k3-j7200-evm-linux-demo.cell"
 
 JH_SYSCONFIG_CELL ?= ""
+JH_SYSCONFIG_CELL_am62xx ?= "k3-am625-sk.cell"
 JH_SYSCONFIG_CELL_am65xx ?= "k3-am654-idk.cell"
 JH_SYSCONFIG_CELL_j7 ?= "k3-j721e-evm.cell"
 JH_SYSCONFIG_CELL_j7200-evm ?= "k3-j7200-evm.cell"
@@ -62,6 +69,7 @@ INITRAMFS_IMAGE ?= ""
 JH_RAMFS_IMAGE ?= "${INITRAMFS_IMAGE}"
 
 JH_CMDLINE ?= ""
+JH_CMDLINE_am62xx ?= "console=ttyS3,115200n8 earlycon=ns16550a,mmio32,0x02810000"
 JH_CMDLINE_am65xx ?= "console=ttyS1,115200n8"
 JH_CMDLINE_j7 ?= "console=ttyS3,115200n8"
 JH_CMDLINE_j7200-evm ?= "console=ttyS3,115200n8"

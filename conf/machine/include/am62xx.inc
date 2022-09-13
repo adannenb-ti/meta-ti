@@ -3,7 +3,8 @@ SOC_FAMILY_append = ":am62xx"
 
 MACHINE_FEATURES += "screen touchscreen"
 
-SERIAL_CONSOLES = "115200;ttyS2"
+# Normally AM62 boards use ttyS2, but our Jailhouse inmate may use ttyS3, so try both
+SERIAL_CONSOLES = "115200;ttyS2 115200;ttyS3"
 SERIAL_CONSOLES_CHECK = "${SERIAL_CONSOLES}"
 
 TFA_K3_SYSTEM_SUSPEND = "1"
